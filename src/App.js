@@ -58,7 +58,7 @@ class App extends React.Component {
       task: this.state.value,
       id: Date.now(),
       completed: false
-    }
+    };
     this.setState({
       value: '',
       todos: [...this.state.todos, newTodo]
@@ -67,7 +67,7 @@ class App extends React.Component {
 
   toggleDone = e => {
     this.setState({todos: this.state.todos.map(i => {
-      if (i.id === e.target.id.toString()) {
+      if (i.id == e.target.id.toString()) {
         return {
           task: i.task,
           id: i.id,
@@ -87,11 +87,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="mainContainer">
+      <div class="container">
         <h2>Welcome to your Todo App!</h2>
         <TodoForm value={this.state.value} handleChange={this.handleChange} addTodo={this.addTodoHandler} clearCompleted={this.clearCompletedHandler} />
         <TodoList todos={this.state.todos} toggleDone={this.toggleDone} />
-        <button id="clearCompleted" onClick={this.clearCompleted}>Clear completed</button>
+        <button id="clearCompleted" onClick={this.clearCompleted} className="btn btn-primary">Clear completed</button>
       </div>
     );
   }

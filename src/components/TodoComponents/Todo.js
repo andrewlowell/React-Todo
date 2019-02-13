@@ -3,7 +3,7 @@ import './Todo.css';
 
 const Todo = props => {
   return (
-    <div className="listItem">
+    <div className="listItem form-group">
       <input type="checkbox" name={props.item.task} id={props.item.id}  onChange={props.toggleDone} checked={props.item.completed} />
       <label className={props.item.completed ? 'strike' : ''} htmlFor={props.item.task} >{props.item.task}</label>
     </div>
